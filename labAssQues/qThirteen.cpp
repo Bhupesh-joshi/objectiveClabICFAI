@@ -13,4 +13,5 @@ int main ()
     b = b / 10;
     a = (a + 10) + d;
     b = (b + 10) + c;
+    "two digits after reversing the last digit" << rev_pro << a << endl;
 }

@@ -12,6 +12,8 @@ int main()
         a = x%10;
         if(a%2==0){
             d=d+1;
+        }else {
+            cout<<"Enter a valid num: " << endl;
         }
         x=x/10;
     }
