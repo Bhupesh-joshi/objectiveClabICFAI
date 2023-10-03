@@ -3,18 +3,21 @@
 using namespace std;
 
 int main () {
-    int a;
-    cout << "Enter a : ";
-    cin >> a;
+    int n;
+    cout << "Enter N : ";
+    cin >> n;
 
     int i = 2;
-    int sum = 0;
 
-    while(i/a) {
-        sum = sum + a;
-        i = i + 2;
+    while(i<n){
+        // dividing, not prime
+        if(n%i == 0){
+            cout << "not prime" << endl;
+        } else {
+            cout << "Prime for" << i << endl;
+        }
+
+        i = i + 1;
     }
-
-    cout << sum << endl;
 
 }
