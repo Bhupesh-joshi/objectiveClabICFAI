@@ -1,22 +1,24 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
     double num1, num2;
 
     // Input two numbers
-    std::cout << "Enter the first number: ";
-    std::cin >> num1;
-    std::cout << "Enter the second number: ";
-    std::cin >> num2;
+    cout << "Enter the first number: ";
+    cin >> num1;
+    cout << "Enter the second number: ";
+    cin >> num2;
 
-    // Find and print the largest number first
-    if (num1 > num2) {
-        std::cout << "The largest number is: " << num1 << std::endl;
-        std::cout << "The second number is: " << num2 << std::endl;
-    } else {
-        std::cout << "The largest number is: " << num2 << std::endl;
-        std::cout << "The first number is: " << num1 << std::endl;
+    // Swap the numbers if the second number is larger
+    if (num2 > num1) {
+        swap(num1, num2);
     }
+
+    // Print both numbers, with the largest number first
+    cout << "The largest number is: " << num1;
+    cout << "The second number is: " << num2 << endl;
 
     return 0;
 }
