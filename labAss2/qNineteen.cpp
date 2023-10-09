@@ -1,39 +1,26 @@
 #include <iostream>
 #include <string>
-#include <sstream>
 
 int main() {
-    int number;
-    std::cout << "Enter an integer: ";
+    long long int number; // Input number
+    std::cout << "Enter a number: ";
     std::cin >> number;
 
-    // Convert the integer to a string
-    std::string numberStr = std::to_string(number);
-
-    // Initialize variables for the sum and the current number
+    std::string numStr = std::to_string(number); // Convert number to a string
     int sum = 0;
-    int currentNumber = 0;
 
-    // Use a stringstream to convert substrings to integers
-    std::istringstream iss;
+    for (int i = 0; i < numStr.length(); i++) {
+        int currentDigit = numStr[i] - '0';
 
-    // Iterate through the string
-    for (size_t i = 0; i < numberStr.size(); ++i) {
-        // Add the current digit to the currentNumber
-        currentNumber = currentNumber * 10 + (numberStr[i] - '0');
-
-        // If we've encountered a consecutive pair of digits, add it to the sum
-        if (i < numberStr.size() - 1) {
-            sum += currentNumber;
-            currentNumber = 0; // Reset currentNumber
+        // Check if there is a next digit to exchange and form a number
+        if (i < numStr.length() - 1) {
+            int nextDigit = numStr[i + 1] - '0';
+            int exchangedNumber = nextDigit * 10 + currentDigit; // Exchange the digits
+            sum += exchangedNumber;
         }
     }
 
-    // Add the last number (if it's a single digit)
-    sum += currentNumber;
-
-    // Print the sum of numbers formed by consecutive digits
-    std::cout << "The sum of numbers formed by consecutive digits is: " << sum << std::endl;
+    std::cout << "The sum of numbers formed by exchanging consecutive digits is: " << sum << std::endl;
 
     return 0;
 }
